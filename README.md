@@ -1,0 +1,1 @@
+# This repository is about making a module in drupal 7 and 8. If somebody's learning Module Development in Drupal, it'll be helpful for them. This module ccreates a block which greets to logged in user. It'll greet according to current time. If it's morning, it'll display Good Morning (username) and so on.
