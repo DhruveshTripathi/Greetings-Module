@@ -1,1 +1,9 @@
 <?php
+
+function greetings_block_info(){
+  return array(
+	'greetings_block' => array(
+	  'info' => t(Greetings block!!'),
+  	),
+  );
+}
