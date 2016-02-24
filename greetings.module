@@ -6,6 +6,35 @@
  */
 
 /**
+ * Implements hook_menu().
+ */
+function greetings_menu() {
+  $menus['admin/structure/greetings'] = array(
+    'title' => 'Greeting message for Annonymous user',
+    'page callback' => 'drupal_get_form',
+    'access callback' => TRUE,
+    'page arguments' => array('greetings_admin_settings'),
+    'access arguments' => array('access administration pages'),
+    'description' => 'Ajax callback for view loading.',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $menus;
+}
+
+/**
+ * Implements hook_admin_settings().
+ */
+function greetings_admin_settings(){
+  $form['greetings_alter_msg']=array(
+    '#type' => 'textfield',
+    '#title' => t('Alert message'),
+    '#description' => t('Write a message to show to anonymous users'),
+    '#default_value' => variable_get('greetings_alter_msg','Hello!'),
+  );
+  return system_settings_form($form);
+}
+
+/**
  * Implements hook_block_info().
  */
 function greetings_block_info() {
@@ -34,7 +63,7 @@ function greetings_block_view($delta = '') {
 	  }
   }
   else {
-    $block['content'] = t('Welcome Anonymous');
+    $block['content'] = variable_get('greetings_alter_msg','Hola!!');
    }
    return $block;
 }
