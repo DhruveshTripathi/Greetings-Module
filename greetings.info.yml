@@ -1,0 +1,6 @@
+name: Greetings
+description: Greetings module greets user accourding to current time.
+package: Custom #The module will go under custom
+
+type: module
+core: 8.x
