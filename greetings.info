@@ -1,4 +1,4 @@
 name = Greetings
-description = Greetings module greets user accourding to current time.
+description = Greetings module greets user according to current time.
 core = 7.x
 version = VERSION
