@@ -52,7 +52,7 @@ function greetings_block_view() {
   if (user_is_logged_in() == TRUE) {
     global $user;
     $block = array();
-    date_default_timezone_get();
+    drupal_get_user_timezone();
     if (date("H") < 12) {
       $block['content'] = t('Good Morning @uname..!', array('@uname' => $user->name));
     } 
